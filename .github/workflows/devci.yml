@@ -1,0 +1,26 @@
+# This does a clean install of node dependencies, builds the source code, and does a CI pass
+
+name: CI
+
+on:
+  push:
+    branches: [dev]
+  pull_request: 
+    branches: [dev]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Setup
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+
+    - name: CI
+      run: npm ci
