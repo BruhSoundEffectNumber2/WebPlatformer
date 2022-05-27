@@ -1,0 +1,14 @@
+$palette-bg: hsl(0, 0%, 10%);
+$palette-bg-light: hsl(0, 0%, 15%);
+$palette-text: aliceBlue;
+$font-stack: 100% Helvetica, Arial, sans-serif;
+
+html, body {
+  background-color: $palette-bg;
+  color: $palette-text;
+  font: $font-stack;
+}
+
+h1 {
+  font-size: 200%;
+}
