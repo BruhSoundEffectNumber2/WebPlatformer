@@ -20,6 +20,9 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: "[name][ext]",
+        },
       },
       {
         test: /\.(ogg|mp3|wav?g)$/i,
