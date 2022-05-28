@@ -18,11 +18,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|(?:\.tsx))$/i,
         type: 'asset/resource',
         generator: {
           filename: "[name][ext]",
         },
+        exclude: /node_modules/,
       },
       {
         test: /\.(ogg|mp3|wav?g)$/i,
@@ -35,14 +36,14 @@ module.exports = {
         enforce: 'pre',
       },
       {
-        test: /\.tsx?$/,
+        test: /(?:\.ts)$/g,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-      },
+      }
     ],
   },
   resolve: {
